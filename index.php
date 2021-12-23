@@ -13,12 +13,31 @@
 //     echo $count . ' ';
 // }
 
-function counter()
-{
-    static $count = 0;
-    echo $count;
-    $count++;
-}
+// function counter()
+// {
+//     global $count;
+//     $count++;
+//     function counte()
+//     {
+//         global $count;
+//         echo $count . ' ';
+//         $count++;
+//     }
+//     counte();
+//     echo $count;
+// }
+// $count = 1;
+// counter();
 
-counter();
-counter();
+
+$a = [1,2,3,4];
+$b = $a;
+$b[0]=0;
+$b="hello";
+// $a = 'hello';
+
+print_r($a);
+print_r($b);
+// echo $a[1];
+// echo $b;
+
