@@ -1,16 +1,12 @@
 <?php
 
-try {
-    $pdo = new PDO('mysql:host=127.0.0.1;dbname=learnPhp', 'hamayun', 'Waheed12');
-} catch(PDOException $e) {
-    die($e->getMessage());
-}
+require 'database/Connection.php';
 
-$statement = $pdo->prepare('select * from todos');
+require 'functions.php';
 
-$statement->execute();
+$pdo = Connection::connect();
 
-$tasks = $statement->fetchAll(PDO::FETCH_OBJ);
+$tasks = fetchAllTasks($pdo);
 
 require 'index.view.php';
 
