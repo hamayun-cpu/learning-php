@@ -9,8 +9,6 @@ require 'Task.php';
  
 $tasks = $db->selectAll('todos', 'Task');
 
-die(var_dump($tasks));
-
 require 'index.view.php';
 
 // require 'function.php';
