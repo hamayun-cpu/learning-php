@@ -7,8 +7,9 @@
 <body>
     <nav>
         <ul>
-            <li><a href="/contact.php">Contact</a></li>
-            <li><a href="about.php">About</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="about/culture">About Culture</a></li>
         </ul>
     </nav>
     <h1>My Tasks</h1>
