@@ -11,7 +11,7 @@
             <li>
                 <?= $task->description; ?>
                 <?php 
-                    if($task->isComplete()) {
+                    if($task->completed) {
                         echo "Completed";
                     }
                 ?>

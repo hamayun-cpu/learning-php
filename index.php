@@ -1,34 +1,48 @@
 <?php
 
-require 'function.php';
-
-
-class Task {
-    public $description;
-
-    protected $status;
-
-    public function __construct($desc, $status) {
-        $this->description = $desc;
-        $this->status = $status;
-    }
-
-    public function complete() {
-        $this->status = true;
-    }
-
-    public function isComplete() {
-        return $this->status;
-    }
+try {
+    $pdo = new PDO('mysql:host=127.0.0.1;dbname=learnPhp', 'hamayun', 'Waheed12');
+} catch(PDOException $e) {
+    die($e->getMessage());
 }
 
-$tasks = [
-    new Task('shave', true),
-    new Task('brush', false),
-    new Task('take shower', false)
-];
+$statement = $pdo->prepare('select * from todos');
+
+$statement->execute();
+
+$tasks = $statement->fetchAll(PDO::FETCH_OBJ);
 
 require 'index.view.php';
+
+// require 'function.php';
+
+
+// class Task {
+//     public $description;
+
+//     protected $status;
+
+//     public function __construct($desc, $status) {
+//         $this->description = $desc;
+//         $this->status = $status;
+//     }
+
+//     public function complete() {
+//         $this->status = true;
+//     }
+
+//     public function isComplete() {
+//         return $this->status;
+//     }
+// }
+
+// $tasks = [
+//     new Task('shave', true),
+//     new Task('brush', false),
+//     new Task('take shower', false)
+// ];
+
+// require 'index.view.php';
 
 // dd($tasks);
 
