@@ -27,15 +27,27 @@ $posts = [
 ];
 
 
-$unPublishedPosts = array_filter($posts, function($post) {
-    return ! $post->published;
-});
+// $unPublishedPosts = array_filter($posts, function($post) {
+//     return ! $post->published;
+// });
 
-// die(var_dump($unPublishedPosts));
+// // die(var_dump($unPublishedPosts));
 
-$publishedPosts = array_filter($posts, function($post) {
-    return $post->published;
-});
+// $publishedPosts = array_filter($posts, function($post) {
+//     return $post->published;
+    
+// });
 
-die(var_dump($publishedPosts));
+// $modified = array_map(function($post) {
+//     $copy = new Post($post->title, $post->published);
+//     $copy->published = true;
+//     return $copy;
+// },($posts));
+
+$modified = array_map(function($post) {
+    
+        return (array) $post;
+},($posts));
+
+die(var_dump($modified));
 
