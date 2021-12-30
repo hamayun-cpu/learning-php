@@ -44,10 +44,12 @@ $posts = [
 //     return $copy;
 // },($posts));
 
-$modified = array_map(function($post) {
+// $modified = array_map(function($post) {
     
-        return (array) $post;
-},($posts));
+//         return (array) $post;
+// },($posts));
 
-die(var_dump($modified));
+$titles = array_column($posts, 'title');
+
+die(var_dump($titles));
 
